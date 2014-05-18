@@ -1,4 +1,6 @@
 class Api::V1::UsersController < ApplicationController
+  respond_to :json
+
 	def show
 		@user = User.find(params[:id])
 		render json: detail_user_json(@user)
@@ -28,6 +30,13 @@ class Api::V1::UsersController < ApplicationController
 		@users = User.all
 		render json: users_json(@users)
 	end
+
+  def text
+    render json: {status: "error", messages: 'Body required'} and return unless params[:body]
+    @user = User.find(params[:id])
+    @user.text(params[:body])
+    render status: 200, json: {}
+  end
 
 	def update_last_location
 		@user = User.find(params[:id])

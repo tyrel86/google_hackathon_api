@@ -5,6 +5,7 @@ GoogleHackathonApi::Application.routes.draw do
 			resources :pages
 			resources :users, only: [:show] do
 				member do
+					get "text" => "users#text"
 					get "update_last_location"
 				end
 				collection do
