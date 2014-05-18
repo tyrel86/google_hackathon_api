@@ -5,12 +5,12 @@ GoogleHackathonApi::Application.routes.draw do
 			resources :pages
 			resources :users, only: [:show] do
 				member do
-					post "update_last_location"
 					get "text" => "users#text"
+					get "update_last_location"
 				end
 				collection do
 					get "create" => "users#create"
-					get "update" => "users#create"
+					get "update" => "users#update"
 					match "search", via: [:get, :post]
 				end
 			end

@@ -6,21 +6,11 @@ development:
   host: localhost
   username: root
   password: SQL_BuddhA024878
-test:
-  adapter: mysql2
-  encoding: utf8
-  database: google_hackathon_api_test
-  pool: 5
-  username: google_hack
-  password: team20
-  host: localhost
-  password: root
-  host: SQL_BuddhA024878
 production:
   adapter: mysql2
   encoding: utf8
   database: google_hackathon_api_production
   pool: 5
-  host: localhost
-  password: root
-  host: SQL_BuddhA024878
+  host: 173.194.244.85
+  username: root
+  password: SQL_BuddhA024878
