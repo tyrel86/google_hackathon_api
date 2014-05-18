@@ -21,6 +21,6 @@ production:
   encoding: utf8
   database: google_hackathon_api_production
   pool: 5
-  host: localhost
+  host: 173.194.244.85
   password: root
   host: SQL_BuddhA024878

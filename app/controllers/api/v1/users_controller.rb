@@ -29,6 +29,19 @@ class Api::V1::UsersController < ApplicationController
 		render json: users_json(@users)
 	end
 
+	def update_last_location
+		@user = User.find(params[:id])
+		@location = Location.new
+		@location.lat = params[:lat]
+		@location.lng = params[:lng]
+		@location.user = @user
+		if @location.save
+			render json: {stuatus: "success"}
+		else
+			render json: {success: "error", messages: @location.errors.messages}
+		end
+	end
+
 	private
 	def update_user_with_post_params
 		params.keys.select{|key| key =~ /user_/i}.each do |key|
@@ -94,4 +107,5 @@ class Api::V1::UsersController < ApplicationController
 
 		base_hash.to_json
 	end
+
 end
