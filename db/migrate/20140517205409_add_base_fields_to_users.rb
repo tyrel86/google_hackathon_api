@@ -1,0 +1,47 @@
+class AddBaseFieldsToUsers < ActiveRecord::Migration
+  def change
+    add_column :users, :first_name, :string
+    add_column :users, :last_name, :string
+    add_column :users, :physical_street_1, :string
+    add_column :users, :physical_street_2, :string
+    add_column :users, :physical_city, :string
+    add_column :users, :physical_state, :string
+    add_column :users, :physical_zipcode, :string
+    add_column :users, :mailing_street_1, :string
+    add_column :users, :mailing_street_2, :string
+    add_column :users, :mailing_city, :string
+    add_column :users, :mailing_state, :string
+    add_column :users, :mailing_zipcode, :string
+    add_column :users, :current_street_1, :string
+    add_column :users, :current_street_2, :string
+    add_column :users, :current_city, :string
+    add_column :users, :current_state, :string
+    add_column :users, :current_zipcode, :string
+    add_column :users, :email, :string
+    add_column :users, :alternate_email, :string
+    add_column :users, :cell_phone, :string
+    add_column :users, :home_phone, :string
+    add_column :users, :work_phone, :string
+    add_column :users, :relatives_phone, :string
+    add_column :users, :alternate_phone, :string
+    add_column :users, :damage_level, :string
+    add_column :users, :living_situation, :string
+    add_column :users, :type_of_dwelling, :string
+    add_column :users, :insurance_status, :string
+    add_column :users, :type_of_business_insurance, :string
+    add_column :users, :name_of_business, :string
+    add_column :users, :food_concerns, :text
+    add_column :users, :housing_concerns, :text
+    add_column :users, :health_concerns, :text
+    add_column :users, :medicine_concerns, :text
+    add_column :users, :employment_concerns, :text
+    add_column :users, :building_structure_concerns, :text
+    add_column :users, :transporation_concerns, :text
+    add_column :users, :financial_concerns, :text
+    add_column :users, :clean_up_concerns, :text
+    add_column :users, :has_unemployment_insurance, :boolean
+    add_column :users, :has_pets, :boolean
+    add_column :users, :has_service_animal, :boolean
+    add_column :users, :other_concerns, :text
+  end
+end
